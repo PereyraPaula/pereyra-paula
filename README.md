@@ -1,43 +1,52 @@
-# Astro Starter Kit: Minimal
+# Portfolio - Paula Pereyra
 
-```sh
-bun create astro@latest -- --template minimal
+Este proyecto es un portfolio personal que muestra mis habilidades, proyectos y experiencia profesional. Está diseñado para ser rápido, accesible y fácil de mantener gracias a las ventajas de Astro.
+
+## 🚀 Características
+- **Rápido y ligero**: Astro genera páginas estáticas por defecto, optimizando el rendimiento.
+- **SEO-friendly**: Estructura semántica y optimización para motores de búsqueda.
+- **Diseño responsive**: Adaptado para móviles, tablets y escritorio.
+
+## 🛠 Tecnologías utilizadas
+- **Astro**: Framework principal para la construcción del sitio.
+- **Tailwind CSS**: Para estilos rápidos y personalizables.
+- **Bun**: Entorno de ejecución de Javascript, diseñado para ser una alternativa más rápida a Node.js y Deno.
+
+## 📦 Instalación y ejecución local
+
+1. **Clona el repositorio**:
+```bash
+git clone https://github.com/tu-usuario/mi-portfolio-astro.git
+cd mi-portfolio-astro
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Instala las dependencias:
+```bash
+bun install
+```
 
-## 🚀 Project Structure
+3. Ejecuta el servidor de desarrollo:
+```bash
+bun dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Abre http://localhost:3000 en tu navegador.
 
-```text
-/
-├── public/
+4. Construye para producción:
+```bash
+bun run build
+```
+
+## Estructura del proyecto
+
+```
+pereyra-paula/
+├── public/          # Archivos estáticos (imágenes, fuentes, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/  # Componentes reutilizables
+│   ├── layouts/      # Layouts principales
+│   ├── pages/        # Páginas del sitio (ruteo basado en archivos)
+│   ├── styles/       # Estilos globales y Tailwind
+├── astro.config.mjs # Configuración de Astro
 └── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

@@ -1,0 +1,66 @@
+{
+  "trabajos": [
+    {
+      "titulo": "Computel",
+      "descripcion": "Sitio web autogestionable para catálogo de productos tecnológicos con sistema de categorías y búsqueda.",
+      "enlace": "https://www.computelweb.com.ar/",
+      "repositorio": null,
+      "imagen": "/images/works/computel.webp"
+    },
+    {
+      "titulo": "VakoSRL",
+      "descripcion": "Web Auto-Administrable para publicar viajes de cargas para transportistas. Hecho junto a Agustin Monzón.",
+      "enlace": "https://vakosrl.com.ar/inicio/",
+      "repositorio": "https://vakosrl.com.ar/inicio/",
+      "imagen": "/images/works/vakosrl.webp"
+    },
+    {
+      "titulo": "Servicio Técnico",
+      "descripcion": "Aplicación creada en Flutter para elaborar y emitir presupuestos en formato PDF/Imágenes.",
+      "enlace": null,
+      "repositorio": "https://github.com/PereyraPaula/servicio_tecnico",
+      "imagen": "https://dummyimage.com/720x400"
+    },
+    {
+      "titulo": "Multipago",
+      "descripcion": "Pagina institucional de empresa de servicio de cobro.",
+      "enlace": "https://www.multipago.com.ar/",
+      "repositorio": null,
+      "imagen": "/images/works/multipago.webp"
+    },
+    {
+      "titulo": "Zonis y Asociados",
+      "descripcion": "Estudio contable.",
+      "enlace": "https://zonisyasociados.com.ar/",
+      "repositorio": null,
+      "imagen": "/images/works/zonisyasociados.webp"
+    }
+  ],
+  "experience": [
+    {
+      "rol": "Desarrollo de páginas webs - Trabajo por demanda (Freelance)",
+      "año": "Jul 2021 - Actualidad",
+      "lugar": "ContenidosOnline",
+      "descripcion": "Desarrollo y mantenimiento de diversas páginas web, sobre todo institucionales, usando WordPress como CMS. Creación de plugins de WordPress personalizados para optimizar la gestión de contenido o mejorar la experiencia del usuario. En proyectos sin necesidad de CMS, utilización de HTML, CSS y JS."
+    },
+    {
+      "rol": "Desarrollador frontend",
+      "año": "Ago 2022 - Feb 2025",
+      "detalle_contrato": "Full-time hasta Oct. 2023, luego flexible por horas",
+      "lugar": "Xirect Software Solutions",
+      "descripcion": "Creación y adaptación de interfaces de usuario personalizadas utilizando Vue (Nuxt) y React (Typescript). Colaboración en proyectos para entregar soluciones de alta calidad optimizadas para diferentes dispositivos. Uso de Cypress.io para testing."
+    },
+    {
+      "rol": "Pasantía - Desarrolladora fullstack",
+      "año": "Oct. 2021 - Oct. 2022",
+      "lugar": "Municipalidad Gualeguaychú - Sector público / Gobierno local",
+      "descripcion": "Participación en el mantenimiento y creación de nuevas funciones para la aplicación 'GualeActiva' (PHP) y Javascript. Desarrollo de la primera versión del sitio web del área de turismo de la municipalidad utilizando WordPress."
+    },
+    {
+      "rol": "Tecnicatura Superior en Análisis y Desarrollo de Software",
+      "año": "2019 - 2021",
+      "lugar": "Instituto Sedes Sapientiae",
+      "descripcion": "Formación académica técnica en análisis y desarrollo de sistemas."
+    }
+  ]
+}
