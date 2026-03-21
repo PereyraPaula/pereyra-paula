@@ -4,12 +4,12 @@ titulo: "Servicio tecnico"
 descripcion:  "Aplicación creada en Flutter para elaborar y emitir presupuestos."
 enlace: null
 repositorio: "https://github.com/PereyraPaula/servicio_tecnico"
-imagen: "/images/works/servicio_tecnico.webp?notshowinDetails"
+imagen: "/images/works/servicio_tecnico.webp?notshowinDetails=true"
 fecha: "Diciembre - 2024"
 industria: "tecnológica"
 ---
 
-**Presupuestos Rápidos para Reparación de Celulares**
+**Presupuestos Rápidos para Reparación de Celulares**.    
 
 **Contexto:** Solución desarrollada inicialmente para usar en su trabajo mi pareja, para agilizar la generación y compartición de presupuestos de reparación de celulares, adaptada a la necesidad de enviar información clara y profesional por cualquier canal: redes sociales, WhatsApp o impreso.
 

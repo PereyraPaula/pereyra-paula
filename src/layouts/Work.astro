@@ -5,6 +5,13 @@ import Section from "../components/Section.astro";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+
+const showImageInGrid = () => {
+    return (
+        frontmatter.imagen &&
+        !frontmatter.imagen.includes("notshowinDetails=true")
+    );
+};
 ---
 
 <Layout title={`Trabajo ${frontmatter.titulo} - Portfolio Paula Pereyra`}>
@@ -17,24 +24,24 @@ const { frontmatter } = Astro.props;
         </div>
     </Section>
     <main
-        class={`${frontmatter.image ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col gap-4"} container mx-auto p-10 gap-10 md:relative min-h-screen`}
+        class={`${showImageInGrid() ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col gap-4"} container mx-auto p-10 gap-10 md:relative min-h-screen`}
     >
         <div
-            class={`text-black ${frontmatter.image ? "prose" : ""} text-lg
-  prose-h1:font-bold prose-h1:text-xl
-  prose-a:text-black prose-img:rounded-xl
-  prose-headings:underline`}
+            class={`text-black ${showImageInGrid() ? "prose" : ""} text-lg
+            prose-h1:font-bold prose-h1:text-xl
+            prose-a:text-black prose-img:rounded-xl
+            prose-headings:underline prose-p:mb-2`}
         >
             <slot />
             <div
-                class="border-4 border-blue-300 rounded-lg border-dotted w-full h-fit p-3 flex flex-col m-0"
+                class="border-4 border-blue-300 rounded-lg border-dotted w-full h-fit p-3 flex flex-col m-0 my-10"
             >
                 <span><strong>Fecha: </strong>{frontmatter.fecha}</span>
                 <span><strong>Industria: </strong>{frontmatter.industria}</span>
             </div>
         </div>
         {
-            !frontmatter.imagen.includes("notshowinDetails") && (
+            showImageInGrid() && (
                 <img
                     src={frontmatter.imagen}
                     alt={frontmatter.titulo}
