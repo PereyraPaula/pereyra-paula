@@ -8,36 +8,40 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={`Trabajo ${frontmatter.titulo} - Portfolio Paula Pereyra`}>
-  <Navbar />
-  <Section
-    classes="mt-20 h-66 bg-gray-300 text-black flex justify-start items-center "
-  >
-    <div class="container mx-auto px-10 text-6xl font-bold">
-      {frontmatter.titulo}
-    </div>
-  </Section>
-  <main
-    class="container mx-auto p-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:relative min-h-screen"
-  >
-    <div
-      class="text-black prose text-lg
-  prose-h1:font-bold prose-h1:text-xl
-  prose-a:text-black prose-p:text-justify prose-img:rounded-xl
-  prose-headings:underline"
+    <Navbar />
+    <Section
+        classes="mt-20 h-66 bg-gray-300 text-black flex justify-start items-center "
     >
-      <slot />
-      <div
-        class="border-4 border-blue-300 rounded-lg border-dotted w-full h-fit p-3 flex gap-4 items-center"
-      >
-        <p><strong>Fecha: </strong>{frontmatter.fecha}</p> |
-        <p><strong>Industria: </strong>{frontmatter.industria}</p>
-      </div>
-    </div>
-    <img
-      src={frontmatter.imagen}
-      alt={frontmatter.titulo}
-      class="w-full max-w-192.5 rounded-lg"
-    />
-  </main>
-  <Footer />
+        <div class="container mx-auto px-10 text-6xl font-bold">
+            {frontmatter.titulo}
+        </div>
+    </Section>
+    <main
+        class={`${frontmatter.image ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col gap-4"} container mx-auto p-10 gap-10 md:relative min-h-screen`}
+    >
+        <div
+            class={`text-black ${frontmatter.image ? "prose" : ""} text-lg
+  prose-h1:font-bold prose-h1:text-xl
+  prose-a:text-black prose-img:rounded-xl
+  prose-headings:underline`}
+        >
+            <slot />
+            <div
+                class="border-4 border-blue-300 rounded-lg border-dotted w-full h-fit p-3 flex flex-col m-0"
+            >
+                <span><strong>Fecha: </strong>{frontmatter.fecha}</span>
+                <span><strong>Industria: </strong>{frontmatter.industria}</span>
+            </div>
+        </div>
+        {
+            !frontmatter.imagen.includes("notshowinDetails") && (
+                <img
+                    src={frontmatter.imagen}
+                    alt={frontmatter.titulo}
+                    class="w-full max-w-192.5 rounded-lg"
+                />
+            )
+        }
+    </main>
+    <Footer />
 </Layout>
