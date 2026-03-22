@@ -3,38 +3,40 @@ import Logo from "./Logo.astro";
 ---
 
 <div
-    class="text-gray-600 body-font border-b border-gray-200 fixed w-full bg-white z-10 top-0"
+    class="text-black body-font border-b border-gray-200 fixed w-full bg-white z-10 top-0"
 >
     <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center gap-3"
     >
-        <Logo />
+        <Logo text="PP" />
         <nav
             class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
         >
-            <a href="/" class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+            <a
+                href="/"
+                class="uppercase mr-5 hover:text-primary hover:cursor-pointer"
                 >Inicio</a
             >
             <a
                 href="#trabajos"
-                class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+                class="uppercase mr-5 hover:text-primary hover:cursor-pointer"
                 >Trabajos</a
             >
             <a
                 href="#experiencia"
-                class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+                class="uppercase mr-5 hover:text-primary hover:cursor-pointer"
                 >Experiencia</a
             >
             <a
                 href="#sobre-mi"
-                class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+                class="uppercase mr-5 hover:text-primary hover:cursor-pointer"
                 >Sobre mí</a
             >
         </nav>
         <a
             href="#contacto"
-            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-            >Contacto
-        </a>
+            class="uppercase inline-flex text-white bg-primary border-0 py-2 px-4 focus:outline-none hover:bg-primary/80 rounded text-md"
+            >Contacto</a
+        >
     </div>
 </div>
