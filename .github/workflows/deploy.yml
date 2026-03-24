@@ -3,6 +3,11 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'src/**'
+      - 'dist/**'
+      - 'public/**'
+      - '.github/workflows/deploy.yml
 
 jobs:
   build-and-deploy:
