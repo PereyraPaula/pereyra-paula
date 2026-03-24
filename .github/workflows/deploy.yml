@@ -13,11 +13,18 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # o '22.x', '22.12.0', etc.
+
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
+
       - run: bun install
       - run: bun run build
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
