@@ -1,6 +1,15 @@
 ---
+
+import { SEO } from "astro-seo";
 import "../styles/global.css";
-const { title } = Astro.props;
+
+interface Props {
+  title: string;
+  description?: string; // Prop opcional
+}
+
+const { title, description = "Portfolio personal de Paula Pereyra - Desarrolladora web y movil" } = Astro.props;
+
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -8,8 +17,23 @@ const { title } = Astro.props;
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <SEO
+              title={title}
+              description={description}
+              openGraph={
+                {
+                  basic: {
+                    title,
+                    type: "website",
+                    url: "https://tublog.com",
+                    image: "/favicon.svg"
+                  },
+                  optional: {
+                    description
+                  }
+                }
+              }
+            />
     </head>
     <body>
         <slot />
