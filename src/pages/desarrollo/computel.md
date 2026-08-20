@@ -5,6 +5,7 @@ descripcion:  "Sitio web autogestionable para catálogo de productos tecnológic
 enlace: "https://www.computelweb.com.ar/"
 repositorio: null
 imagen: "/images/works/computel.webp"
+tecnologia_principal: "Wordpress"
 fecha: "Abril - 2025"
 industria: "tecnológica"
 ---
@@ -13,7 +14,7 @@ industria: "tecnológica"
 Catálogo Tecnológico con Seguridad y Experiencia de Usuario Optimizada
 </span>
 
-**Contexto:** 
+**Contexto:**
 Tras un ataque cibernético que comprometió el sitio anterior, este proyecto nació como una solución integral: **reconstruir desde cero** con WordPress, priorizando **seguridad, rendimiento y funcionalidad**.
 
 **Soluciones implementadas:**

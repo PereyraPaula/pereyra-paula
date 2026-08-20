@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
 
 const showImageInGrid = () => {
     return (
-        frontmatter.imagen &&
+        frontmatter?.imagen &&
         !frontmatter.imagen.includes("notshowinDetails=true")
     );
 };
@@ -38,6 +38,13 @@ const showImageInGrid = () => {
             >
                 <span><strong>Fecha: </strong>{frontmatter.fecha}</span>
                 <span><strong>Industria: </strong>{frontmatter.industria}</span>
+                <span>
+                    <strong>
+                        <a href={frontmatter.enlace || frontmatter.repositorio}>
+                            Ver {frontmatter.enlace ? "página" : "repositorio"}
+                        </a>
+                    </strong>
+                </span>
             </div>
         </div>
         {

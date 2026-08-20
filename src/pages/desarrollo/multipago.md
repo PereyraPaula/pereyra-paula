@@ -6,6 +6,7 @@ enlace: "https://www.multipago.com.ar/"
 repositorio: null
 imagen: "/images/works/multipago.webp"
 fecha: "Septiembre - 2022"
+tecnologia_principal: "Wordpress"
 industria: "servicios financieros"
 ---
 

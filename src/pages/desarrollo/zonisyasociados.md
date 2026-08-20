@@ -6,6 +6,7 @@ enlace: "https://zonisyasociados.com.ar/"
 repositorio: null
 imagen: "/images/works/zonisyasociados.webp"
 fecha: "Septiembre - 2022"
+tecnologia_principal: "Wordpress"
 industria: "servicios profesionales"
 ---
 
