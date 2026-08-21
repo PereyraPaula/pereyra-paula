@@ -1,3 +1,25 @@
+---
+/**
+ * Calcula los años pasados desde una fecha de inicio hasta hoy, con redondeo
+ * @param startDate - Fecha de inicio (puede ser string, Date o timestamp)
+ * @returns Número de años redondeado (ej: 2.5 años -> 3, 2.4 años -> 2)
+ */
+function calculateYearsPassed(startDate: Date | string | number): number {
+  // Convertir a Date si es necesario
+  const start = new Date(startDate);
+  const now = new Date();
+
+  // Calcular diferencia en milisegundos
+  const diffMs = now.getTime() - start.getTime();
+
+  // Diferencia en años (considerando año promedio de 365.25 días)
+  const yearsDiff = diffMs / (1000 * 60 * 60 * 24 * 365.25);
+
+  // Redondear: si es >= 0.5 (6 meses) redondea hacia arriba, sino hacia abajo
+  return Math.round(yearsDiff);
+}
+---
+
 <section
     class="bg-linear-to-b from-sky-100 to-slate-50 text-gray-600 body-font min-h-screen flex flex-col justify-center pt-41.25 md:pt-0 lg:pt-0"
 >
@@ -17,7 +39,7 @@
             <p
                 class="mb-8 leading-relaxed mx-auto md:w-[70%] lg:text-lg xl:text-xl md:text-md sm:text-sm"
             >
-                Soy Paula Pereyra, desarrolladora web y móvil con +3 años de
+              Soy <span class="font-semibold">Paula Pereyra</span>, desarrolladora web y móvil con {calculateYearsPassed('2021-10-31')} años de
                 experiencia. Diseño y construyo soluciones digitales
                 personalizadas, desde páginas web hasta apps Android, ayudando a
                 negocios y emprendedores a crecer en el mundo digital.
@@ -26,12 +48,14 @@
                 <a
                     href="#trabajos"
                     class="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-primary/80 rounded text-lg"
+                    aria-label="trabajos"
                     >Trabajo</a
                 >
                 <a
                     href="https://docs.google.com/document/d/17_8nFwtqJ1Awr7Zx4r8HBmxzsh1vm_dpTAbLkumX1nc/edit?usp=sharing"
                     target="_blank"
-                    class="ml-4 inline-flex text-gray-500 bg-gray-100 border border-gray-300 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+                    class="ml-4 inline-flex text-[#1d4f6f] bg-gray-200 border border-gray-300 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+                    aria-label="curriculum"
                     >Curriculum</a
                 >
             </div>
