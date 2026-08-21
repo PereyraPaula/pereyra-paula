@@ -28,8 +28,14 @@ jobs:
           node-version: '22'
           cache: 'pnpm'
 
-      - run: pnpm install
-      - run: pnpm run build
+      - name: Install dependencies
+        run: |
+          pnpm install --no-frozen-lockfile
+          # O si tienes problemas con el store:
+          # pnpm install --no-frozen-lockfile --store-dir=node_modules/.pnpm-store
+
+      - name: Build project
+        run: pnpm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
