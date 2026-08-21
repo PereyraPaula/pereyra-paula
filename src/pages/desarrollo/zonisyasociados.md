@@ -1,5 +1,6 @@
 ---
 layout: '../../layouts/Work.astro'
+archived: true
 titulo: "Zonis y Asociados"
 descripcion:  "Pagina institucional para un estudio contable."
 enlace: "https://zonisyasociados.com.ar/"

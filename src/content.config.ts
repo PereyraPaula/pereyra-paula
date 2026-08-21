@@ -10,6 +10,7 @@ export const months: Record<string, string> = {
 
 const desarrolloSchema = z.object({
   titulo: z.string(),
+  archived: z.boolean().optional(),
   descripcion: z.string(),
   enlace: z.string().nullable().optional(),
   repositorio: z.string().nullable().optional(),

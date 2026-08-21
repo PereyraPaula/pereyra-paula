@@ -1,0 +1,125 @@
+---
+import { type DesarrolloFrontmatter } from "../../content.config";
+import Layout from "../../layouts/Layout.astro";
+
+const markdowns = Object.values(
+  import.meta.glob("../../pages/desarrollo/*.md", { eager: true })
+);
+
+const trabajos: DesarrolloFrontmatter[] = markdowns
+  .filter((works: any) => works.frontmatter.archived)
+  .map((el: any) => {
+    return { ...el.frontmatter, url: el.url };
+  });
+---
+
+<Layout title="Trabajos archivados">
+  <main class="container mx-auto my-10">
+    <h1 class="text-3xl mb-3 font-bold text-primary uppercase">
+      Trabajos Archivados
+    </h1>
+
+    {trabajos.length > 0 ? (
+      <ul class="space-y-6">
+        {trabajos.map((trabajo) => (
+          <li class="relative">
+            <article class="flex gap-2 justify-between items-center border-b border-gray-200 pb-4">
+              <div class="flex gap-4 items-center">
+                <!-- Contenedor del título con efecto hover -->
+                <div class="image-reveal-container">
+                  <a href={trabajo.enlace} class="font-semibold text-lg hover:text-blue-600 transition-colors">
+                    {trabajo.titulo}
+                  </a>
+                  <!-- Imagen que se revela al hacer hover -->
+                  {trabajo.imagen && (
+                    <div class="reveal-image">
+                      <img
+                        src={trabajo.imagen}
+                        alt={`Imagen de ${trabajo.titulo}`}
+                        width="200"
+                        height="150"
+                        class="rounded-lg shadow-lg object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <p class="text-gray-600">{trabajo.descripcion}</p>
+              </div>
+
+              <div class="flex gap-4 items-center whitespace-nowrap">
+                <time class="text-gray-500 text-sm">
+                  {new Date(trabajo.fecha).toLocaleDateString('es-ES', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })}
+                </time>
+                <span class="text-gray-300">|</span>
+                <a href={trabajo.enlace} class="text-blue-500 hover:underline text-sm font-medium">
+                  ENLACE
+                </a>
+              </div>
+            </article>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="text-gray-500">No hay trabajos archivados.</p>
+    )}
+  </main>
+</Layout>
+
+<style>
+  /* Contenedor relativo para posicionar la imagen */
+  .image-reveal-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Imagen oculta por defecto */
+  .reveal-image {
+    position: absolute;
+    top: 100%; /* Aparece debajo del título */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
+    pointer-events: none;
+    width: 200px;
+    margin-top: 8px;
+  }
+
+  /* Revelar imagen al hacer hover en el contenedor */
+  .image-reveal-container:hover .reveal-image {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%) translateY(0);
+  }
+
+  /* Efecto adicional: sombra y escala */
+  .reveal-image img {
+    transition: transform 0.3s ease;
+    border: 2px solid white;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .image-reveal-container:hover .reveal-image img {
+    transform: scale(2);
+  }
+
+  /* Ajuste para evitar desbordamiento en móviles */
+  @media (max-width: 768px) {
+    .reveal-image {
+      width: 150px;
+      left: 0;
+      transform: translateX(0) translateY(10px);
+    }
+
+    .image-reveal-container:hover .reveal-image {
+      transform: translateX(0) translateY(0);
+    }
+  }
+</style>

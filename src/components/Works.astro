@@ -3,7 +3,7 @@ import { months, type DesarrolloFrontmatter } from "../content.config";
 import Section from "./Section.astro";
 
 const markdowns: any = Object.values(
-    import.meta.glob("../pages/desarrollo/*.md", { eager: true }),
+  import.meta.glob("../pages/desarrollo/*.md", { eager: true }),
 );
 
 const convertirFechas = (fechaStr: string): number => {
@@ -18,8 +18,9 @@ const convertirFechas = (fechaStr: string): number => {
 };
 
 const trabajos: DesarrolloFrontmatter[] = markdowns
-    .map((e: any) => {
-        return { ...e.frontmatter, url: e.url };
+    .filter((works: any) => !works.frontmatter.archived)
+    .map((el: any) => {
+        return { ...el.frontmatter, url: el.url };
     })
     .sort(
         (a: { fecha: string }, b: { fecha: string }) =>
@@ -82,7 +83,7 @@ const techs: { [key: string]: string } = {
         <h1
             class="title-font sm:text-4xl text-3xl mb-15 font-medium text-gray-900 text-center"
         >
-            Trabajos
+          Algunos de mis trabajos
         </h1>
         <div
             class="grid lg:grid-col-4 md:grid-cols-3 grid-cols-1 gap-4 flex-row -m-4"
