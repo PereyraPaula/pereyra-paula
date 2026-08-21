@@ -6,6 +6,7 @@ enlace: "https://vakosrl.com.ar/inicio/"
 repositorio: null
 imagen: "/images/works/vakosrl.webp"
 fecha: "Marzo - 2024"
+tecnologia_principal: "Wordpress"
 industria: "transporte y logística de cargas por carretera"
 ---
 

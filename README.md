@@ -11,13 +11,13 @@ Portfolio personal que muestra mis habilidades, proyectos y experiencia profesio
 - **Astro**: Framework principal para la construcción del sitio.
   - **Astro SEO**: Componente de Astro que facilita la adición de etiquetas relevantes para la optimización de motores de búsqueda (SEO) a tus páginas.
 - **Tailwind CSS**: Para estilos rápidos y personalizables.
-- **Bun**: Entorno de ejecución de Javascript, diseñado para ser una alternativa más rápida a Node.js y Deno.
+- **Pnpm**: gestor de paquetes para proyectos de Node.js que ofrece ventajas de velocidad y espacio en comparación con NPM o Yarn.
 
 ## 📦 Instalación y ejecución local
 
 ### Versiones usadas:
 * Node: v24.11.0
-* Bun: v1.3.4
+* Pnpm: v11.22.0
 * Tailwind: v4.2.1
 
 ### Pasos:
@@ -30,24 +30,24 @@ cd pereyra-paula
 
 2. Instala las dependencias:
 ```bash
-bun install
+pnpm install
 ```
 
 3. Ejecuta el servidor de desarrollo:
 ```bash
-bun dev
+pnpm dev
 ```
 
 Abre http://localhost:4321 en tu navegador.
 
 4. Construye para producción:
 ```bash
-bun run build
+pnpm run build
 ```
 
 5. Visualiza el código para producción (opcional):
 ```bash
-bun run preview
+pnpm run preview
 ```
 Abre http://localhost:4321 en tu navegador.
 
@@ -63,7 +63,7 @@ pereyra-paula
 │   ├── layouts # Layouts principales
 │   ├── pages  # Páginas del sitio
 │   │   ├── index.astro
-│   │   └── posts
+│   │   └── desarrollo # Detalle de cada desarrollo hecho
 │   └── styles # Estilos globales y Tailwind
 └── tsconfig.json
 ```

@@ -1,11 +1,13 @@
 ---
 layout: '../../layouts/Work.astro'
+archived: true
 titulo: "Zonis y Asociados"
 descripcion:  "Pagina institucional para un estudio contable."
 enlace: "https://zonisyasociados.com.ar/"
 repositorio: null
 imagen: "/images/works/zonisyasociados.webp"
 fecha: "Septiembre - 2022"
+tecnologia_principal: "Wordpress"
 industria: "servicios profesionales"
 ---
 

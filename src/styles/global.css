@@ -1,6 +1,13 @@
+@font-face {
+  font-family: Jost;
+  font-display: swap;
+  src: url("/jost-vf.woff2") format("woff2");
+}
+
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
 @theme {
   --color-primary: #2d78b0;
+  --font-sans: "Jost", sans-serif;
 }

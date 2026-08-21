@@ -29,7 +29,7 @@ import Logo from "./Logo.astro";
                 escríbeme por correo o redes.
             </p>
             <div class="flex md:justify-center gap-4 mt-4">
-                <a href="mailto:paulapereyrallorens@gmail.com">
+              <a aria-label="correo" href="mailto:paulapereyrallorens@gmail.com">
                     <svg
                         class="text-inherit hover:cursor-pointer w-10 h-10 bg-gray-300 p-2 rounded-lg"
                         xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +44,7 @@ import Logo from "./Logo.astro";
                 </a>
                 <a
                     target="_blank"
+                    aria-label="Linkedin"
                     href="https://www.linkedin.com/in/paula-pereyra-4b3127327"
                 >
                     <svg
@@ -58,7 +59,7 @@ import Logo from "./Logo.astro";
                         ></path></svg
                     >
                 </a>
-                <a target="_blank" href="https://github.com/PereyraPaula">
+                <a aria-label="github" target="_blank" href="https://github.com/PereyraPaula">
                     <svg
                         class="text-inherit hover:cursor-pointer w-10 h-10 bg-gray-300 p-2 rounded-lg"
                         xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +92,13 @@ import Logo from "./Logo.astro";
                 >
                 <a
                     href="/#sobre-mi"
-                    class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+                    class="mr-5 text-gray-600 hover:text-gray-900 hover:cursor-pointer"
                     >Sobre mí</a
+                >
+                <a
+                    href="/archivado"
+                    class="mr-5 hover:text-gray-900 hover:cursor-pointer"
+                    >Trabajos archivados</a
                 >
             </nav>
         </div>
